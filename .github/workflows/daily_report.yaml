@@ -1,7 +1,7 @@
 name: Daily GitHub Report
 on:
   schedule:
-    - cron: '0 * * * *' # every day at 07:00 UTC
+    - cron: '0 11 * * *' # every day at 11:00 UTC
   workflow_dispatch:
 
 jobs:
@@ -12,7 +12,7 @@ jobs:
       SMTP_USER: ${{ secrets.SMTP_USER }}
       SMTP_PASS: ${{ secrets.SMTP_PASS }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
