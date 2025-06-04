@@ -14,13 +14,30 @@ SMTP_PORT = 465
 SMTP_USER = os.environ["SMTP_USER"]
 SMTP_PASS = os.environ["SMTP_PASS"]
 
-yesterday = (datetime.utcnow() - timedelta(days=1)).isoformat()
+from datetime import timezone
+yesterday = (datetime.now(timezone.utc) - timedelta(days=1)).isoformat()
 
 def fetch_changes(repo):
     headers = {"Authorization": f"token {GITHUB_TOKEN}"}
     url = f"https://api.github.com/repos/{repo}/issues?since={yesterday}"
     r = requests.get(url, headers=headers)
-    return r.json()
+
+    # Check for API call success
+    if r.status_code != 200:
+        print(f"Failed to fetch changes for {repo}: {r.status_code}, {r.text}")
+        return []
+
+    try:
+        changes = r.json()
+        if isinstance(changes, list):
+            return changes
+        else:
+            print(f"Unexpected response format for {repo}: {changes}")
+            return []
+    except ValueError as e:
+        print(f"Error parsing JSON response for {repo}: {e}")
+        return []
+
 
 def main():
     summary = ""
