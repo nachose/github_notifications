@@ -11,6 +11,8 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       SMTP_USER: ${{ secrets.SMTP_USER }}
       SMTP_PASS: ${{ secrets.SMTP_PASS }}
+      EMAIL_FROM: ${{ env.EMAIL_FROM }}
+      EMAIL_TO: ${{ env.EMAIL_TO }}
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python

@@ -7,8 +7,8 @@ from email.mime.text import MIMEText
 # Config
 GITHUB_TOKEN = os.environ["GITHUB_TOKEN"]
 REPOS = ["helix-editor/helix", "hsutter/cppfront", "LadybirdBrowser/ladybird", "jenkinsci/jenkins", "opencv/opencv"]
-EMAIL_FROM = "[REDACTED]"
-EMAIL_TO = "[REDACTED]"
+EMAIL_FROM = os.environ["EMAIL_FROM"]
+EMAIL_TO = os.environ["EMAIL_TO"]
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 465
 SMTP_USER = os.environ["SMTP_USER"]
