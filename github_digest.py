@@ -6,8 +6,10 @@ from email.mime.text import MIMEText
 
 # Config
 GITHUB_TOKEN = os.environ["GITHUB_TOKEN"]
-REPOS = ["helix-editor/helix", "hsutter/cppfront", "LadybirdBrowser/ladybird", "jenkinsci/jenkins", "opencv/opencv",
-         "quarkusio/quarkus", "rust-lang/rust", "spring-projects/spring-framework"]
+REPOS = ["helix-editor/helix", "hsutter/cppfront", "LadybirdBrowser/ladybird",
+         "jenkinsci/jenkins", "opencv/opencv", "quarkusio/quarkus",
+         "rust-lang/rust", "spring-projects/spring-framework",
+         "a-n-t-h-o-n-y/TermOx"]
 EMAIL_FROM = os.environ["EMAIL_FROM"]
 EMAIL_TO = os.environ["EMAIL_TO"]
 SMTP_SERVER = "smtp.gmail.com"
