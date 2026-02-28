@@ -6,7 +6,7 @@ from email.mime.text import MIMEText
 
 # Config
 GITHUB_TOKEN = os.environ["GITHUB_TOKEN"]
-REPOS = ["helix-editor/helix", "hsutter/cppfront", "sst/opencode", 
+REPOS = ["helix-editor/helix", "hsutter/cppfront", "anomalyco/opencode", 
          "LadybirdBrowser/ladybird",  "jenkinsci/jenkins", "opencv/opencv", 
          "quarkusio/quarkus", "rust-lang/rust", "spring-projects/spring-framework",
          "a-n-t-h-o-n-y/TermOx", "mawww/kakoune"]
